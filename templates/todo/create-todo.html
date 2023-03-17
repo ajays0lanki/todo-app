@@ -1,0 +1,27 @@
+{% extends '_partials/base.html' %}
+{% block title %}
+        
+ Create Todo
+ 
+{% endblock title %}
+{% load static %}
+
+{% block content %}
+    
+    
+       
+    <h3 class="ui header">Create Todo </h3>
+    {% include '_partials/messages.html' %}
+
+        <form action="{% url 'create-todo' %}" method="post" class="ui form">   
+        {% csrf_token %}
+        {{form.as_p}}
+        <input type="submit" class="ui button primary" value="submit">
+
+
+
+        </form>
+
+    
+
+{% endblock content %}
